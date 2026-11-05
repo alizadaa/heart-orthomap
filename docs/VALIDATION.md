@@ -8,7 +8,7 @@ every orthology edge or a completed cross-species integration benchmark.
 
 | Check | Observed result |
 | --- | --- |
-| Package regression suite | 23 passed on both tested dependency stacks |
+| Package regression suite | 24 passed on both tested dependency stacks |
 | Portable independent suite | 105 passed on both tested dependency stacks; 79 oracle self-checks passed |
 | Independent source execution/oracle suite | 105 passed, 0 failed |
 | Independent rebuilt-wheel execution suite | 105 passed, 0 failed; module hashes match source |
@@ -33,9 +33,9 @@ both environments. Original wheel/stress measurements above describe the
 0.1.0 review; they are not newly measured 0.1.1 wheel performance claims.
 
 The first Linux/Python 3.10-3.12 GitHub CI run exposed an AnnData compatibility
-failure. Version 0.1.1 fixes that failure; a fresh remote run must pass before
-the Linux matrix is described as validated. Local editable-install checks are
-not equivalent to a clean Linux wheel installation.
+failure. Version 0.1.1 fixes that failure. The corrected
+[Linux matrix passed on all three Python versions](https://github.com/alizadaa/heart-orthomap/actions/runs/42110829202).
+Local editable-install checks remain distinct from clean Linux installations.
 
 ## Review Findings Fixed
 

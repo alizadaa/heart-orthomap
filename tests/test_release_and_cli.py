@@ -11,11 +11,18 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 
-from heart_orthomap import convert_anndata, load_mapping, load_bundled_mapping
+from heart_orthomap import __version__, convert_anndata, load_mapping, load_bundled_mapping
 from heart_orthomap.cli import main
 
 
 class FrozenRelease(unittest.TestCase):
+    def test_cli_version_matches_package(self):
+        output = io.StringIO()
+        with redirect_stdout(output), self.assertRaises(SystemExit) as raised:
+            main(["--version"])
+        self.assertEqual(raised.exception.code, 0)
+        self.assertEqual(output.getvalue().strip(), "heart-orthomap " + __version__)
+
     def test_exact_release_and_quarantines(self):
         mouse = load_bundled_mapping("mouse")
         fish = load_bundled_mapping("zebrafish")

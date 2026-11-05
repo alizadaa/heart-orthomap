@@ -8,11 +8,12 @@ import pandas as pd
 
 from .convert import convert_anndata
 from .mapping import load_mapping, load_bundled_mapping
+from . import __version__
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="heart-orthomap")
-    parser.add_argument("--version", action="version", version="heart-orthomap 0.1.0")
+    parser.add_argument("--version", action="version", version="heart-orthomap " + __version__)
     sub = parser.add_subparsers(dest="command", required=True)
     for name in ("convert", "audit"):
         command = sub.add_parser(name)
