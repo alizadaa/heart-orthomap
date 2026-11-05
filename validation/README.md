@@ -1,6 +1,6 @@
 # Independent heart-orthomap validation
 
-Portable reviewer tests for the public heart-orthomap 0.1.0 API. The suite uses
+Portable reviewer tests for the public heart-orthomap 0.1.x API. The suite uses
 the normally installed `heart_orthomap`; it does not search a checkout, modify
 import paths, patch the package, or query the network. It can live in
 `tests/reviewer/` or any other writable directory.
@@ -24,7 +24,7 @@ python -B reproduce_findings.py numeric-string-scores
 python -B reproduce_findings.py overlapping-collisions
 ```
 
-Expected on the reviewed 0.1.0 API: **79 oracle self-checks** and **105 installed
+Expected on the reviewed 0.1.x API: **79 oracle self-checks** and **105 installed
 package checks**, all passing; both regression commands exit zero. A missing
 package/dependency or a failed assertion is an error, not a skipped success.
 Run without `-O` or `PYTHONOPTIMIZE`; optimized runs are rejected explicitly.

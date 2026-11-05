@@ -46,6 +46,27 @@ class ConversionTests(unittest.TestCase):
         self.assertEqual(result.adata.var_names.tolist(), ["h2"])
         np.testing.assert_array_equal(result.adata.X.toarray(), [[4], [5]])
 
+    def test_layer_audit_reports_only_dropped_named_layers(self):
+        data, table = fixture()
+        data.layers["extra_counts"] = data.X.copy()
+        result = convert_anndata(data, table, strategy="sum", source_ambiguity="drop",
+                                 additional_count_layers=("extra_counts",))
+        self.assertEqual(result.report["dropped_layers"], ["lognorm"])
+        np.testing.assert_array_equal(result.adata.layers["extra_counts"].toarray(),
+                                      result.adata.X.toarray())
+
+    def test_raw_x_layer_audit_and_h5ad_roundtrip(self):
+        data, table = fixture()
+        result = convert_anndata(data, table, counts_layer=None)
+        self.assertEqual(result.report["counts_layer"], "X")
+        self.assertEqual(result.report["dropped_layers"], ["lognorm"])
+        with tempfile.TemporaryDirectory() as temp:
+            filename = Path(temp) / "raw_x.h5ad"
+            result.adata.write_h5ad(filename)
+            recovered = ad.read_h5ad(filename)
+            np.testing.assert_array_equal(recovered.X.toarray(), [[4], [5]])
+            self.assertEqual(list(recovered.uns["heart_orthomap"]["dropped_layers"]), ["lognorm"])
+
     def test_ambiguity_requires_explicit_policy(self):
         data, table = fixture()
         with self.assertRaisesRegex(ValueError, "multiple human"):

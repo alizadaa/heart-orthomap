@@ -209,7 +209,9 @@ def convert_anndata(adata, mapping: MappingTable, *, strategy="one2one", counts_
         "mapping_rows_quarantined_for_identifier_review": len(mapping.issues),
         "dropped_feature_axis_objects": [k for k, yes in (("raw", adata.raw is not None),
             ("varm", bool(adata.varm)), ("varp", bool(adata.varp))) if yes],
-        "dropped_layers": sorted(set(adata.layers) - set(additional_count_layers) - {counts_layer, "counts"}),
+        # AnnData 0.13 includes X as the None key in the layer iterator.
+        "dropped_layers": sorted(key for key in adata.layers if key is not None
+            and key not in set(additional_count_layers) | {counts_layer, "counts"}),
         "original_uns_not_copied": sorted(adata.uns.keys()),
         "normalization": "No normalization performed. Use original full-native library sizes for comparisons.",
         "obsm_obsp": "Preserved on identical cell axes; native embeddings/graphs are not recomputed",

@@ -130,7 +130,18 @@ class Suite:
         for method in ("sum", "best_sequence", "best_expression", "highest_total_expression"):
             for fmt in ("csr", "csc", "coo"):
                 def check(method=method, fmt=fmt):
-                    result = self.checked(core_request(method, fmt))
+                    request = core_request(method, fmt)
+                    if self.package is not None and fmt == "coo":
+                        import anndata as ad
+                        try:
+                            ad.AnnData(X=request.X)
+                        except ValueError as error:
+                            if "Only CSR and CSC" not in str(error):
+                                raise
+                            # New AnnData rejects COO before conversion is called.
+                            reject(self.mapper, request)
+                            return
+                    result = self.checked(request)
                     assert_result(result, golden["human_ids"], golden[method])
                     equal(result.selected_sources, {k: tuple(v) for k, v in golden["selected_" + method].items()})
                 self.case("T01_T04_core_%s_%s" % (method, fmt), check)

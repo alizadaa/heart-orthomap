@@ -1,6 +1,6 @@
 # Validation
 
-Local validation date: **5 November 2026**. Code version: **0.1.0**.
+Local validation date: **5 November 2026**. Code version: **0.1.1**.
 These checks validate conversion behavior, not the biological correctness of
 every orthology edge or a completed cross-species integration benchmark.
 
@@ -8,7 +8,8 @@ every orthology edge or a completed cross-species integration benchmark.
 
 | Check | Observed result |
 | --- | --- |
-| Package regression suite | 21 passed |
+| Package regression suite | 23 passed on both tested dependency stacks |
+| Portable independent suite | 105 passed on both tested dependency stacks; 79 oracle self-checks passed |
 | Independent source execution/oracle suite | 105 passed, 0 failed |
 | Independent rebuilt-wheel execution suite | 105 passed, 0 failed; module hashes match source |
 | Wheel archive integrity | RECORD hashes verified; no single-cell matrix artifacts bundled |
@@ -24,11 +25,17 @@ that sparse fixture, not a portable performance guarantee or production
 atlas resource estimate. Direct sparse densification calls were forbidden
 during that conversion.
 
-The test environment was macOS, Python 3.10.19, NumPy 2.2.6, pandas 2.3.3,
-SciPy 1.15.2 and AnnData 0.11.4. The installation smoke test used a virtual
-environment sharing those installed scientific dependencies, not a clean
-download of the entire dependency stack. Linux/Python 3.10-3.12 CI is configured
-but has not yet been executed remotely.
+The original test environment was macOS, Python 3.10.19, NumPy 2.2.6, pandas
+2.3.3, SciPy 1.15.2 and AnnData 0.11.4. A second isolated environment tested
+Python 3.12.14, NumPy 2.3.5, pandas 3.1.1, SciPy 1.18.1 and AnnData 0.13.4.
+The 0.1.1 correction passed the package and portable independent suites in
+both environments. Original wheel/stress measurements above describe the
+0.1.0 review; they are not newly measured 0.1.1 wheel performance claims.
+
+The first Linux/Python 3.10-3.12 GitHub CI run exposed an AnnData compatibility
+failure. Version 0.1.1 fixes that failure; a fresh remote run must pass before
+the Linux matrix is described as validated. Local editable-install checks are
+not equivalent to a clean Linux wheel installation.
 
 ## Review Findings Fixed
 
@@ -37,6 +44,17 @@ but has not yet been executed remotely.
    are now computed on the same original eligible graph and removed together.
 2. External numeric-string expression scores were validated as numeric but
    merged as strings. They are now copied and normalized before thresholding.
+3. AnnData 0.13 includes `.X` as `None` in layer iteration. The conversion's
+   named-layer audit now excludes that sentinel, without changing counts.
+   New regression tests cover explicit raw `.X`, retained count layers and
+   H5AD write/read.
+
+The portable fixture also respects current AnnData's CSR/CSC-only storage:
+COO inputs are checked for explicit rejection when the AnnData constructor
+does not support them. Older AnnData still exercises COO conversion. The
+zero-library fixture builds a temporary LIL matrix locally and assigns only
+its CSR result. The independent arithmetic oracle and golden values did not
+change; unsupported storage is not silently coerced by the adapter.
 
 Both cases have permanent package regression tests. The independent reviewer
 did not edit the implementation; fixes were rerun against source and the built

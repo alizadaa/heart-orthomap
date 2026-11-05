@@ -131,9 +131,9 @@ def run_extended(suite, assert_result, assert_matrix, reject, equal):
             elif attack == "insufficient_groups":
                 kwargs["min_cells"] = 6
             elif attack == "zero_library":
-                source.layers["counts"] = source.layers["counts"].tolil()
-                source.layers["counts"][0, :] = 0
-                source.layers["counts"] = source.layers["counts"].tocsr()
+                counts = source.layers["counts"].tolil()
+                counts[0, :] = 0
+                source.layers["counts"] = counts.tocsr()
             elif attack == "min_cells_bool":
                 kwargs["min_cells"] = True
             elif attack == "min_groups_two":
