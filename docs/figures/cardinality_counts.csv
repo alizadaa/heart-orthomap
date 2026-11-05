@@ -1,0 +1,11 @@
+species_pair,final_cardinality,unique_edges,unique_human_gene_keys,unique_source_gene_keys,gene_counts_additive_across_cardinalities
+human_mouse,All,25768,19383,20487,False
+human_mouse,One2One,17140,17140,17140,False
+human_mouse,One2Many,1939,512,1939,False
+human_mouse,Many2One,1164,1164,374,False
+human_mouse,Many2Many,5525,569,1035,False
+human_fish,All,23006,16039,19012,False
+human_fish,One2One,10566,10566,10566,False
+human_fish,One2Many,7171,3397,7171,False
+human_fish,Many2One,1205,1205,477,False
+human_fish,Many2Many,4064,1035,957,False

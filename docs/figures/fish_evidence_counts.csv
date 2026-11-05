@@ -1,0 +1,11 @@
+final_cardinality,selection_reason,unique_edges,denominator_unique_edges_in_class,unique_human_gene_keys,unique_source_gene_keys,fraction_of_class_edges
+All,ZFIN_curated_primary,17247,23006,13746,17174,0.7496739980874555
+All,Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,5759,23006,2293,2414,0.25032600191254456
+One2One,ZFIN_curated_primary,10093,10566,10093,10093,0.955233768692031
+One2One,Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,473,10566,473,473,0.04476623130796896
+One2Many,ZFIN_curated_primary,6448,7171,3165,6448,0.8991772416678288
+One2Many,Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,723,7171,232,723,0.10082275833217125
+Many2One,ZFIN_curated_primary,382,1205,382,339,0.31701244813278007
+Many2One,Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,823,1205,823,337,0.6829875518672199
+Many2Many,ZFIN_curated_primary,324,4064,189,297,0.0797244094488189
+Many2Many,Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,3740,4064,846,901,0.9202755905511811

@@ -1,0 +1,13 @@
+selection_reason,coverage_definition,usable_for_Ensembl_feature_mapping,unique_edges,denominator_unique_edges,fraction_of_edges
+All,recorded_flags,True,22368,23006,0.9722681039728767
+All,recorded_flags,False,638,23006,0.027731896027123358
+All,syntax_audited,True,22367,23006,0.972224637051204
+All,syntax_audited,False,639,23006,0.027775362948795967
+ZFIN_curated_primary,recorded_flags,True,16645,17247,0.9650953789064765
+ZFIN_curated_primary,recorded_flags,False,602,17247,0.03490462109352351
+ZFIN_curated_primary,syntax_audited,True,16644,17247,0.9650373978083144
+ZFIN_curated_primary,syntax_audited,False,603,17247,0.03496260219168551
+Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,recorded_flags,True,5723,5759,0.9937489147421428
+Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,recorded_flags,False,36,5759,0.006251085257857267
+Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,syntax_audited,True,5723,5759,0.9937489147421428
+Ensembl_fallback_no_ZFIN_ortholog_for_human_gene,syntax_audited,False,36,5759,0.006251085257857267

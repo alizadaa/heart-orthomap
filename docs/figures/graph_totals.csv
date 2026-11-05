@@ -1,0 +1,3 @@
+species_pair,input_rows,unique_edges,exact_duplicate_rows_removed,unique_human_gene_keys,unique_source_gene_keys,human_keys_in_multiple_cardinality_classes,source_keys_in_multiple_cardinality_classes,human_keys_without_single_valid_Ensembl_ID,human_symbol_only_placeholder_keys
+human_mouse,25768,25768,0,19383,20487,2,1,0,0
+human_fish,23006,23006,0,16039,19012,164,159,4,1

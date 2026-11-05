@@ -1,0 +1,33 @@
+{
+  "release": "2026-10-19",
+  "policy": "HumanMouseFrozen_ZFINFishPriority_EnsemblFallback_SecondarySupport_v1",
+  "code_license": "MIT",
+  "data_terms": "Derived from Ensembl, ZFIN and supporting sources; upstream terms apply; see DATA_SOURCES.md",
+  "not_a_unified_orthology_probability": true,
+  "files": {
+    "mouse": {
+      "file": "mouse_to_human.tsv.gz",
+      "sha256": "2caaf5771be1d40745d37896681473955147f080272f4f14e3d22f6341b37390",
+      "upstream_file": "human_mouse_final_mapping.tsv",
+      "upstream_sha256": "c556547e95cd3fb3f1b2711954430236d61ca314d747dfabe805262c31bd3280",
+      "unique_resolved_edges": 25768,
+      "unresolved_rows_excluded": 0,
+      "unresolved_identifiers_file": "",
+      "sequence_score_definition": "arithmetic mean of both exact-pair percentage identities; missing remains missing",
+      "sequence_version": "Ensembl116",
+      "target_species": "human"
+    },
+    "zebrafish": {
+      "file": "zebrafish_to_human.tsv.gz",
+      "sha256": "3d08b403f6a61b0600576690d9b379fb76486d5f96508ce83caed366d9a2a9fe",
+      "upstream_file": "human_fish_final_mapping.tsv",
+      "upstream_sha256": "6411284cc7b92932eb2e4b61f793fef4eb57382b22037abc1bc3653d6e801c08",
+      "unique_resolved_edges": 22361,
+      "unresolved_rows_excluded": 645,
+      "unresolved_identifiers_file": "zebrafish_unresolved_identifiers.tsv.gz",
+      "sequence_score_definition": "arithmetic mean of both exact-pair percentage identities; missing remains missing",
+      "sequence_version": "Ensembl116",
+      "target_species": "human"
+    }
+  }
+}

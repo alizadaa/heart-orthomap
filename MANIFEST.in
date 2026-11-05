@@ -1,0 +1,11 @@
+include LICENSE DATA_SOURCES.md README.md
+recursive-include docs *.md *.png *.pdf *.json *.csv
+recursive-include examples *.py
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include validation *.py *.md *.json *.sha256
+include validation/.gitignore
+prune validation/reports
+prune validation-local
+global-exclude *.py[cod] *.h5ad *.h5 *.rds *.RDS
+recursive-include src/heart_orthomap/data *.json *.tsv.gz *.md

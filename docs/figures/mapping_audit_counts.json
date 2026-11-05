@@ -1,0 +1,985 @@
+{
+  "counting_contract": {
+    "cardinality": "Computed from complete selected pairwise graph; stored degrees and labels must agree",
+    "feature_usability": "Recorded flags use single-token fields; syntax audit additionally requires ENSG/ENSDARG numeric stable-ID syntax; neither is a biological quality score",
+    "fish_edge": "(left_key, fish_key); canonical input keys retained",
+    "fish_evidence": "Selection reason, not independent evidence votes; no inference from missing support",
+    "gene_cardinality_overlap": "Within-class unique gene counts may overlap; All rows deduplicate globally",
+    "human_symbol_partition": "Missing on any incident edge takes precedence; otherwise all same, all different, or mixed",
+    "human_totals": "Unique endpoint keys within each pairwise graph; not a joint-species universe",
+    "mouse_edge": "(human_ensembl_id, mouse_ensembl_id)",
+    "source_totals": "Unique source endpoint keys; fish feature-ID lists never expanded",
+    "symbol_comparison": "Whitespace strip then uppercase; missing either is a separate category"
+  },
+  "credit": "Riley lab / Azad Alizada / CellTalk HHD",
+  "description": "Descriptive selected-pairwise orthology mapping figures; no global superiority claim.",
+  "frozen_release_date": "2026-10-19",
+  "inputs": [
+    {
+      "input_rows": 25768,
+      "path_relative_to_package": "../outputs/orthology_human_mouse_zebrafish_ZFIN_2026_10_19/final_mapping_2026_10_19/release/human_mouse_final_mapping.tsv",
+      "sha256": "c556547e95cd3fb3f1b2711954430236d61ca314d747dfabe805262c31bd3280",
+      "size_bytes": 17185202,
+      "unique_edges": 25768
+    },
+    {
+      "input_rows": 23006,
+      "path_relative_to_package": "../outputs/orthology_human_mouse_zebrafish_ZFIN_2026_10_19/final_mapping_2026_10_19/release/human_fish_final_mapping.tsv",
+      "sha256": "6411284cc7b92932eb2e4b61f793fef4eb57382b22037abc1bc3653d6e801c08",
+      "size_bytes": 31236487,
+      "unique_edges": 23006
+    }
+  ],
+  "runtime": {
+    "matplotlib": "3.9.4",
+    "numpy": "2.0.2",
+    "python": "3.9.6"
+  },
+  "script_sha256": "a9655ccd0d8e2e8a2dae369f6051ba909fa006886a75cf7b5e93a490442f18a7",
+  "tables": {
+    "cardinality_counts": [
+      {
+        "final_cardinality": "All",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_mouse",
+        "unique_edges": 25768,
+        "unique_human_gene_keys": 19383,
+        "unique_source_gene_keys": 20487
+      },
+      {
+        "final_cardinality": "One2One",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_mouse",
+        "unique_edges": 17140,
+        "unique_human_gene_keys": 17140,
+        "unique_source_gene_keys": 17140
+      },
+      {
+        "final_cardinality": "One2Many",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_mouse",
+        "unique_edges": 1939,
+        "unique_human_gene_keys": 512,
+        "unique_source_gene_keys": 1939
+      },
+      {
+        "final_cardinality": "Many2One",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_mouse",
+        "unique_edges": 1164,
+        "unique_human_gene_keys": 1164,
+        "unique_source_gene_keys": 374
+      },
+      {
+        "final_cardinality": "Many2Many",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_mouse",
+        "unique_edges": 5525,
+        "unique_human_gene_keys": 569,
+        "unique_source_gene_keys": 1035
+      },
+      {
+        "final_cardinality": "All",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_fish",
+        "unique_edges": 23006,
+        "unique_human_gene_keys": 16039,
+        "unique_source_gene_keys": 19012
+      },
+      {
+        "final_cardinality": "One2One",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_fish",
+        "unique_edges": 10566,
+        "unique_human_gene_keys": 10566,
+        "unique_source_gene_keys": 10566
+      },
+      {
+        "final_cardinality": "One2Many",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_fish",
+        "unique_edges": 7171,
+        "unique_human_gene_keys": 3397,
+        "unique_source_gene_keys": 7171
+      },
+      {
+        "final_cardinality": "Many2One",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_fish",
+        "unique_edges": 1205,
+        "unique_human_gene_keys": 1205,
+        "unique_source_gene_keys": 477
+      },
+      {
+        "final_cardinality": "Many2Many",
+        "gene_counts_additive_across_cardinalities": false,
+        "species_pair": "human_fish",
+        "unique_edges": 4064,
+        "unique_human_gene_keys": 1035,
+        "unique_source_gene_keys": 957
+      }
+    ],
+    "fish_evidence_counts": [
+      {
+        "denominator_unique_edges_in_class": 23006,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.7496739980874555,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 17247,
+        "unique_human_gene_keys": 13746,
+        "unique_source_gene_keys": 17174
+      },
+      {
+        "denominator_unique_edges_in_class": 23006,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.25032600191254456,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 5759,
+        "unique_human_gene_keys": 2293,
+        "unique_source_gene_keys": 2414
+      },
+      {
+        "denominator_unique_edges_in_class": 10566,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.955233768692031,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 10093,
+        "unique_human_gene_keys": 10093,
+        "unique_source_gene_keys": 10093
+      },
+      {
+        "denominator_unique_edges_in_class": 10566,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.04476623130796896,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 473,
+        "unique_human_gene_keys": 473,
+        "unique_source_gene_keys": 473
+      },
+      {
+        "denominator_unique_edges_in_class": 7171,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.8991772416678288,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 6448,
+        "unique_human_gene_keys": 3165,
+        "unique_source_gene_keys": 6448
+      },
+      {
+        "denominator_unique_edges_in_class": 7171,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.10082275833217125,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 723,
+        "unique_human_gene_keys": 232,
+        "unique_source_gene_keys": 723
+      },
+      {
+        "denominator_unique_edges_in_class": 1205,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.31701244813278007,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 382,
+        "unique_human_gene_keys": 382,
+        "unique_source_gene_keys": 339
+      },
+      {
+        "denominator_unique_edges_in_class": 1205,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.6829875518672199,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 823,
+        "unique_human_gene_keys": 823,
+        "unique_source_gene_keys": 337
+      },
+      {
+        "denominator_unique_edges_in_class": 4064,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.0797244094488189,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 324,
+        "unique_human_gene_keys": 189,
+        "unique_source_gene_keys": 297
+      },
+      {
+        "denominator_unique_edges_in_class": 4064,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.9202755905511811,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 3740,
+        "unique_human_gene_keys": 846,
+        "unique_source_gene_keys": 901
+      }
+    ],
+    "fish_feature_mapping_counts": [
+      {
+        "coverage_definition": "recorded_flags",
+        "denominator_unique_edges": 23006,
+        "fraction_of_edges": 0.9722681039728767,
+        "selection_reason": "All",
+        "unique_edges": 22368,
+        "usable_for_Ensembl_feature_mapping": true
+      },
+      {
+        "coverage_definition": "recorded_flags",
+        "denominator_unique_edges": 23006,
+        "fraction_of_edges": 0.027731896027123358,
+        "selection_reason": "All",
+        "unique_edges": 638,
+        "usable_for_Ensembl_feature_mapping": false
+      },
+      {
+        "coverage_definition": "syntax_audited",
+        "denominator_unique_edges": 23006,
+        "fraction_of_edges": 0.972224637051204,
+        "selection_reason": "All",
+        "unique_edges": 22367,
+        "usable_for_Ensembl_feature_mapping": true
+      },
+      {
+        "coverage_definition": "syntax_audited",
+        "denominator_unique_edges": 23006,
+        "fraction_of_edges": 0.027775362948795967,
+        "selection_reason": "All",
+        "unique_edges": 639,
+        "usable_for_Ensembl_feature_mapping": false
+      },
+      {
+        "coverage_definition": "recorded_flags",
+        "denominator_unique_edges": 17247,
+        "fraction_of_edges": 0.9650953789064765,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 16645,
+        "usable_for_Ensembl_feature_mapping": true
+      },
+      {
+        "coverage_definition": "recorded_flags",
+        "denominator_unique_edges": 17247,
+        "fraction_of_edges": 0.03490462109352351,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 602,
+        "usable_for_Ensembl_feature_mapping": false
+      },
+      {
+        "coverage_definition": "syntax_audited",
+        "denominator_unique_edges": 17247,
+        "fraction_of_edges": 0.9650373978083144,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 16644,
+        "usable_for_Ensembl_feature_mapping": true
+      },
+      {
+        "coverage_definition": "syntax_audited",
+        "denominator_unique_edges": 17247,
+        "fraction_of_edges": 0.03496260219168551,
+        "selection_reason": "ZFIN_curated_primary",
+        "unique_edges": 603,
+        "usable_for_Ensembl_feature_mapping": false
+      },
+      {
+        "coverage_definition": "recorded_flags",
+        "denominator_unique_edges": 5759,
+        "fraction_of_edges": 0.9937489147421428,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 5723,
+        "usable_for_Ensembl_feature_mapping": true
+      },
+      {
+        "coverage_definition": "recorded_flags",
+        "denominator_unique_edges": 5759,
+        "fraction_of_edges": 0.006251085257857267,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 36,
+        "usable_for_Ensembl_feature_mapping": false
+      },
+      {
+        "coverage_definition": "syntax_audited",
+        "denominator_unique_edges": 5759,
+        "fraction_of_edges": 0.9937489147421428,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 5723,
+        "usable_for_Ensembl_feature_mapping": true
+      },
+      {
+        "coverage_definition": "syntax_audited",
+        "denominator_unique_edges": 5759,
+        "fraction_of_edges": 0.006251085257857267,
+        "selection_reason": "Ensembl_fallback_no_ZFIN_ortholog_for_human_gene",
+        "unique_edges": 36,
+        "usable_for_Ensembl_feature_mapping": false
+      }
+    ],
+    "fish_id_coverage": [
+      {
+        "Ensembl_ID_status": "single",
+        "count": 22999,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.9996957315482917,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "missing",
+        "count": 7,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.00030426845170825,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "multiple",
+        "count": 0,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.0,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "invalid_syntax",
+        "count": 0,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.0,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "single",
+        "count": 16035,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 16039,
+        "fraction": 0.9997506078932602,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "missing",
+        "count": 4,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 16039,
+        "fraction": 0.0002493921067398217,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "multiple",
+        "count": 0,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 16039,
+        "fraction": 0.0,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "invalid_syntax",
+        "count": 0,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 16039,
+        "fraction": 0.0,
+        "side": "human"
+      },
+      {
+        "Ensembl_ID_status": "single",
+        "count": 22373,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.9724854385812397,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "missing",
+        "count": 437,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.018995044770929323,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "multiple",
+        "count": 195,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 0.008476049726158393,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "invalid_syntax",
+        "count": 1,
+        "counting_unit": "unique_edges",
+        "denominator": 23006,
+        "fraction": 4.3466921672607145e-05,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "single",
+        "count": 18403,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 19012,
+        "fraction": 0.9679675994108984,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "missing",
+        "count": 436,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 19012,
+        "fraction": 0.022932884494003786,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "multiple",
+        "count": 172,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 19012,
+        "fraction": 0.009046917736166631,
+        "side": "fish"
+      },
+      {
+        "Ensembl_ID_status": "invalid_syntax",
+        "count": 1,
+        "counting_unit": "unique_gene_keys",
+        "denominator": 19012,
+        "fraction": 5.2598358931201344e-05,
+        "side": "fish"
+      }
+    ],
+    "fish_joint_id_coverage": [
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "single",
+        "human_Ensembl_ID_status": "single",
+        "unique_edges": 22367
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "missing",
+        "human_Ensembl_ID_status": "single",
+        "unique_edges": 436
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "multiple",
+        "human_Ensembl_ID_status": "single",
+        "unique_edges": 195
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "invalid_syntax",
+        "human_Ensembl_ID_status": "single",
+        "unique_edges": 1
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "single",
+        "human_Ensembl_ID_status": "missing",
+        "unique_edges": 6
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "missing",
+        "human_Ensembl_ID_status": "missing",
+        "unique_edges": 1
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "multiple",
+        "human_Ensembl_ID_status": "missing",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "invalid_syntax",
+        "human_Ensembl_ID_status": "missing",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "single",
+        "human_Ensembl_ID_status": "multiple",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "missing",
+        "human_Ensembl_ID_status": "multiple",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "multiple",
+        "human_Ensembl_ID_status": "multiple",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "invalid_syntax",
+        "human_Ensembl_ID_status": "multiple",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "single",
+        "human_Ensembl_ID_status": "invalid_syntax",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "missing",
+        "human_Ensembl_ID_status": "invalid_syntax",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "multiple",
+        "human_Ensembl_ID_status": "invalid_syntax",
+        "unique_edges": 0
+      },
+      {
+        "denominator_unique_edges": 23006,
+        "fish_Ensembl_ID_status": "invalid_syntax",
+        "human_Ensembl_ID_status": "invalid_syntax",
+        "unique_edges": 0
+      }
+    ],
+    "graph_totals": [
+      {
+        "exact_duplicate_rows_removed": 0,
+        "human_keys_in_multiple_cardinality_classes": 2,
+        "human_keys_without_single_valid_Ensembl_ID": 0,
+        "human_symbol_only_placeholder_keys": 0,
+        "input_rows": 25768,
+        "source_keys_in_multiple_cardinality_classes": 1,
+        "species_pair": "human_mouse",
+        "unique_edges": 25768,
+        "unique_human_gene_keys": 19383,
+        "unique_source_gene_keys": 20487
+      },
+      {
+        "exact_duplicate_rows_removed": 0,
+        "human_keys_in_multiple_cardinality_classes": 164,
+        "human_keys_without_single_valid_Ensembl_ID": 4,
+        "human_symbol_only_placeholder_keys": 1,
+        "input_rows": 23006,
+        "source_keys_in_multiple_cardinality_classes": 159,
+        "species_pair": "human_fish",
+        "unique_edges": 23006,
+        "unique_human_gene_keys": 16039,
+        "unique_source_gene_keys": 19012
+      }
+    ],
+    "id_validation_issues": [
+      {
+        "fish_ID_status": "invalid_syntax",
+        "fish_ensembl_ids": "ZDB-GENE-040912-178",
+        "fish_key": "ZFIN:ZDB-GENE-040912-178",
+        "fish_symbol": "ass1",
+        "human_ID_status": "single",
+        "human_key": "ENSEMBL:ENSG00000130707",
+        "human_symbol": "ASS1",
+        "issue": "Non-Ensembl identifier in an Ensembl feature-ID field; input preserved unchanged",
+        "left_ensembl_ids": "ENSG00000130707",
+        "recorded_usable_for_Ensembl_feature_mapping": true,
+        "syntax_audited_usable": false
+      }
+    ],
+    "myh6_edges": [
+      {
+        "Ensembl116_exact_pair_status": "exact_stable_ID_pair_found",
+        "ZFIN_supported": "not_applicable",
+        "archived_Ensembl_supported": "not_applicable",
+        "final_cardinality": "One2One",
+        "human_ensembl_ids": "ENSG00000197616",
+        "human_key": "ENSG00000197616",
+        "human_symbol": "MYH6",
+        "selection_reason": "original_human_mouse_stable_ID_pair_preserved",
+        "source_ensembl_ids": "ENSMUSG00000040752",
+        "source_key": "ENSMUSG00000040752",
+        "source_symbol": "Myh6",
+        "species_pair": "human_mouse",
+        "symbol_comparison": "same_after_uppercase"
+      },
+      {
+        "Ensembl116_exact_pair_status": "not_listed_for_exact_pair_in_Ensembl116",
+        "ZFIN_supported": "True",
+        "archived_Ensembl_supported": "False",
+        "final_cardinality": "One2One",
+        "human_ensembl_ids": "ENSG00000197616",
+        "human_key": "ENSEMBL:ENSG00000197616",
+        "human_symbol": "MYH6",
+        "selection_reason": "ZFIN_curated_primary",
+        "source_ensembl_ids": "ENSDARG00000090637",
+        "source_key": "ZFIN:ZDB-GENE-031112-1",
+        "source_symbol": "myh6",
+        "species_pair": "human_fish",
+        "symbol_comparison": "same_after_uppercase"
+      }
+    ],
+    "symbol_edge_counts": [
+      {
+        "denominator_unique_edges_in_class": 25768,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.6326451412604781,
+        "fraction_of_graph_edges": 0.6326451412604781,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 16302
+      },
+      {
+        "denominator_unique_edges_in_class": 25768,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.33506674945669046,
+        "fraction_of_graph_edges": 0.33506674945669046,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 8634
+      },
+      {
+        "denominator_unique_edges_in_class": 25768,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.03228810928283142,
+        "fraction_of_graph_edges": 0.03228810928283142,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 832
+      },
+      {
+        "denominator_unique_edges_in_class": 17140,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.9210035005834306,
+        "fraction_of_graph_edges": 0.6126203042533375,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 15786
+      },
+      {
+        "denominator_unique_edges_in_class": 17140,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.0749124854142357,
+        "fraction_of_graph_edges": 0.0498292455759081,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 1284
+      },
+      {
+        "denominator_unique_edges_in_class": 17140,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.004084014002333722,
+        "fraction_of_graph_edges": 0.002716547656007451,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 70
+      },
+      {
+        "denominator_unique_edges_in_class": 1939,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.13047962867457452,
+        "fraction_of_graph_edges": 0.009818379385284074,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 253
+      },
+      {
+        "denominator_unique_edges_in_class": 1939,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.8303249097472925,
+        "fraction_of_graph_edges": 0.06248059608817137,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 1610
+      },
+      {
+        "denominator_unique_edges_in_class": 1939,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.039195461578133056,
+        "fraction_of_graph_edges": 0.0029493945979509467,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 76
+      },
+      {
+        "denominator_unique_edges_in_class": 1164,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.12972508591065293,
+        "fraction_of_graph_edges": 0.005859981372244644,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 151
+      },
+      {
+        "denominator_unique_edges_in_class": 1164,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.7912371134020618,
+        "fraction_of_graph_edges": 0.03574200558832661,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 921
+      },
+      {
+        "denominator_unique_edges_in_class": 1164,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.07903780068728522,
+        "fraction_of_graph_edges": 0.0035703197764669356,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 92
+      },
+      {
+        "denominator_unique_edges_in_class": 5525,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.020271493212669682,
+        "fraction_of_graph_edges": 0.004346476249611922,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 112
+      },
+      {
+        "denominator_unique_edges_in_class": 5525,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.8722171945701358,
+        "fraction_of_graph_edges": 0.18701490220428438,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 4819
+      },
+      {
+        "denominator_unique_edges_in_class": 5525,
+        "denominator_unique_edges_in_graph": 25768,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.10751131221719457,
+        "fraction_of_graph_edges": 0.023051847252406086,
+        "species_pair": "human_mouse",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 594
+      },
+      {
+        "denominator_unique_edges_in_class": 23006,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.45479440146048855,
+        "fraction_of_graph_edges": 0.45479440146048855,
+        "species_pair": "human_fish",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 10463
+      },
+      {
+        "denominator_unique_edges_in_class": 23006,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.517821437885769,
+        "fraction_of_graph_edges": 0.517821437885769,
+        "species_pair": "human_fish",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 11913
+      },
+      {
+        "denominator_unique_edges_in_class": 23006,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "All",
+        "fraction_of_class_edges": 0.027384160653742502,
+        "fraction_of_graph_edges": 0.027384160653742502,
+        "species_pair": "human_fish",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 630
+      },
+      {
+        "denominator_unique_edges_in_class": 10566,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.9415105053946621,
+        "fraction_of_graph_edges": 0.43240893679909587,
+        "species_pair": "human_fish",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 9948
+      },
+      {
+        "denominator_unique_edges_in_class": 10566,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.0542305508233958,
+        "fraction_of_graph_edges": 0.024906546118403896,
+        "species_pair": "human_fish",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 573
+      },
+      {
+        "denominator_unique_edges_in_class": 10566,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "One2One",
+        "fraction_of_class_edges": 0.004258943781942078,
+        "fraction_of_graph_edges": 0.0019560114752673217,
+        "species_pair": "human_fish",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 45
+      },
+      {
+        "denominator_unique_edges_in_class": 7171,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.013247803653604798,
+        "fraction_of_graph_edges": 0.004129357558897679,
+        "species_pair": "human_fish",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 95
+      },
+      {
+        "denominator_unique_edges_in_class": 7171,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.975735601729187,
+        "fraction_of_graph_edges": 0.3041380509432322,
+        "species_pair": "human_fish",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 6997
+      },
+      {
+        "denominator_unique_edges_in_class": 7171,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "One2Many",
+        "fraction_of_class_edges": 0.0110165946172082,
+        "fraction_of_graph_edges": 0.0034338868121359645,
+        "species_pair": "human_fish",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 79
+      },
+      {
+        "denominator_unique_edges_in_class": 1205,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.2804979253112033,
+        "fraction_of_graph_edges": 0.014691819525341215,
+        "species_pair": "human_fish",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 338
+      },
+      {
+        "denominator_unique_edges_in_class": 1205,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.6240663900414938,
+        "fraction_of_graph_edges": 0.03268712509780057,
+        "species_pair": "human_fish",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 752
+      },
+      {
+        "denominator_unique_edges_in_class": 1205,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "Many2One",
+        "fraction_of_class_edges": 0.0954356846473029,
+        "fraction_of_graph_edges": 0.004998695992349822,
+        "species_pair": "human_fish",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 115
+      },
+      {
+        "denominator_unique_edges_in_class": 4064,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.020177165354330708,
+        "fraction_of_graph_edges": 0.003564287577153786,
+        "species_pair": "human_fish",
+        "symbol_comparison": "same_after_uppercase",
+        "unique_edges": 82
+      },
+      {
+        "denominator_unique_edges_in_class": 4064,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.8836122047244095,
+        "fraction_of_graph_edges": 0.15608971572633226,
+        "species_pair": "human_fish",
+        "symbol_comparison": "different_after_uppercase",
+        "unique_edges": 3591
+      },
+      {
+        "denominator_unique_edges_in_class": 4064,
+        "denominator_unique_edges_in_graph": 23006,
+        "final_cardinality": "Many2Many",
+        "fraction_of_class_edges": 0.09621062992125984,
+        "fraction_of_graph_edges": 0.016995566373989395,
+        "species_pair": "human_fish",
+        "symbol_comparison": "missing_either_symbol",
+        "unique_edges": 391
+      }
+    ],
+    "symbol_human_key_counts": [
+      {
+        "denominator_unique_human_gene_keys": 19383,
+        "fraction_of_human_keys": 0.8223185265438786,
+        "human_key_symbol_category": "all_edges_same_after_uppercase",
+        "species_pair": "human_mouse",
+        "unique_human_gene_keys": 15939
+      },
+      {
+        "denominator_unique_human_gene_keys": 19383,
+        "fraction_of_human_keys": 0.14755197853789404,
+        "human_key_symbol_category": "all_edges_different_after_uppercase",
+        "species_pair": "human_mouse",
+        "unique_human_gene_keys": 2860
+      },
+      {
+        "denominator_unique_human_gene_keys": 19383,
+        "fraction_of_human_keys": 0.018315018315018316,
+        "human_key_symbol_category": "mixed_same_and_different",
+        "species_pair": "human_mouse",
+        "unique_human_gene_keys": 355
+      },
+      {
+        "denominator_unique_human_gene_keys": 19383,
+        "fraction_of_human_keys": 0.011814476603208997,
+        "human_key_symbol_category": "missing_symbol_on_at_least_one_edge",
+        "species_pair": "human_mouse",
+        "unique_human_gene_keys": 229
+      },
+      {
+        "denominator_unique_human_gene_keys": 16039,
+        "fraction_of_human_keys": 0.6428705031485753,
+        "human_key_symbol_category": "all_edges_same_after_uppercase",
+        "species_pair": "human_fish",
+        "unique_human_gene_keys": 10311
+      },
+      {
+        "denominator_unique_human_gene_keys": 16039,
+        "fraction_of_human_keys": 0.32576843942889205,
+        "human_key_symbol_category": "all_edges_different_after_uppercase",
+        "species_pair": "human_fish",
+        "unique_human_gene_keys": 5225
+      },
+      {
+        "denominator_unique_human_gene_keys": 16039,
+        "fraction_of_human_keys": 0.006297150695180498,
+        "human_key_symbol_category": "mixed_same_and_different",
+        "species_pair": "human_fish",
+        "unique_human_gene_keys": 101
+      },
+      {
+        "denominator_unique_human_gene_keys": 16039,
+        "fraction_of_human_keys": 0.025063906727352078,
+        "human_key_symbol_category": "missing_symbol_on_at_least_one_edge",
+        "species_pair": "human_fish",
+        "unique_human_gene_keys": 402
+      }
+    ]
+  },
+  "validation": {
+    "ID_syntax_issues": 1,
+    "MYH6_direct_selected_edges": "passed",
+    "all_rows_selected": "passed",
+    "consistent_ID_fields_per_canonical_fish_and_human_key": "passed",
+    "duplicate_pairs": "exact duplicates deduplicated; conflicting duplicates rejected",
+    "fish_recorded_feature_flags_vs_raw_ID_token_counts": "passed",
+    "one_selection_reason_per_human_fish_key": "passed",
+    "required_columns_and_canonical_keys": "passed",
+    "stored_degrees_and_cardinality": "passed"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"name": "finite_and_missing_scores", "source_ids": ["S102", "S100", "S101"], "counts": [[9, 8, 2], [1, 2, 4]], "scores": ["NaN", null, 90]},
+    {"name": "all_missing_scores", "source_ids": ["S111", "S110"], "counts": [[9, 2], [1, 4]], "scores": [null, "NaN"]},
+    {"name": "sequence_tie", "source_ids": ["S121", "S120"], "counts": [[9, 2], [1, 4]], "scores": [90, 90]},
+    {"name": "expression_tie", "source_ids": ["S131", "S130"], "counts": [[9, 1], [1, 9]], "scores": [99, 80]},
+    {"name": "global_source_not_per_cell_max", "source_ids": ["S140", "S141"], "counts": [[9, 1], [0, 7]], "scores": [80, 99]}
+  ]
+}

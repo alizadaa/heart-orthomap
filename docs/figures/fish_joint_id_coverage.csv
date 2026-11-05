@@ -1,0 +1,17 @@
+human_Ensembl_ID_status,fish_Ensembl_ID_status,unique_edges,denominator_unique_edges
+single,single,22367,23006
+single,missing,436,23006
+single,multiple,195,23006
+single,invalid_syntax,1,23006
+missing,single,6,23006
+missing,missing,1,23006
+missing,multiple,0,23006
+missing,invalid_syntax,0,23006
+multiple,single,0,23006
+multiple,missing,0,23006
+multiple,multiple,0,23006
+multiple,invalid_syntax,0,23006
+invalid_syntax,single,0,23006
+invalid_syntax,missing,0,23006
+invalid_syntax,multiple,0,23006
+invalid_syntax,invalid_syntax,0,23006

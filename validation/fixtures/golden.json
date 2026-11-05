@@ -1,0 +1,23 @@
+{
+  "core": {
+    "human_ids": ["H010", "H020", "H060"],
+    "sum": [[2, 43, 0], [0, 6, 0], [4, 1, 0]],
+    "best_sequence": [[2, 3, 0], [0, 5, 0], [4, 1, 0]],
+    "best_expression": [[2, 40, 0], [0, 1, 0], [4, 0, 0]],
+    "highest_total_expression": [[2, 40, 0], [0, 1, 0], [4, 0, 0]],
+    "selected_sum": {"H010": ["S010"], "H020": ["S020", "S021"], "H060": ["S060"]},
+    "selected_best_sequence": {"H010": ["S010"], "H020": ["S020"], "H060": ["S060"]},
+    "selected_best_expression": {"H010": ["S010"], "H020": ["S021"], "H060": ["S060"]},
+    "selected_highest_total_expression": {"H010": ["S010"], "H020": ["S021"], "H060": ["S060"]},
+    "ambiguous_source_ids": ["S030", "S040", "S041"],
+    "unmatched_source_ids": ["S050"],
+    "sum_input_totals": [93, 36, 31],
+    "sum_output_totals": [45, 6, 5]
+  },
+  "metadata_alt": {
+    "sum": [[5, 11, 0], [0, 101, 0], [7, 6, 0]],
+    "best_sequence": [[5, 3, 0], [0, 100, 0], [7, 4, 0]],
+    "best_expression": [[5, 8, 0], [0, 1, 0], [7, 2, 0]],
+    "highest_total_expression": [[5, 8, 0], [0, 1, 0], [7, 2, 0]]
+  }
+}

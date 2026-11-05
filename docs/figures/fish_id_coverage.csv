@@ -1,0 +1,17 @@
+side,counting_unit,Ensembl_ID_status,count,denominator,fraction
+human,unique_edges,single,22999,23006,0.9996957315482917
+human,unique_edges,missing,7,23006,0.00030426845170825
+human,unique_edges,multiple,0,23006,0.0
+human,unique_edges,invalid_syntax,0,23006,0.0
+human,unique_gene_keys,single,16035,16039,0.9997506078932602
+human,unique_gene_keys,missing,4,16039,0.0002493921067398217
+human,unique_gene_keys,multiple,0,16039,0.0
+human,unique_gene_keys,invalid_syntax,0,16039,0.0
+fish,unique_edges,single,22373,23006,0.9724854385812397
+fish,unique_edges,missing,437,23006,0.018995044770929323
+fish,unique_edges,multiple,195,23006,0.008476049726158393
+fish,unique_edges,invalid_syntax,1,23006,4.3466921672607145e-05
+fish,unique_gene_keys,single,18403,19012,0.9679675994108984
+fish,unique_gene_keys,missing,436,19012,0.022932884494003786
+fish,unique_gene_keys,multiple,172,19012,0.009046917736166631
+fish,unique_gene_keys,invalid_syntax,1,19012,5.2598358931201344e-05

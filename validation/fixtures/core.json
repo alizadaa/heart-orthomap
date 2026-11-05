@@ -1,0 +1,25 @@
+{
+  "fixture_version": 1,
+  "note": "Synthetic IDs; row multiplicity is third-species provenance, not count weight.",
+  "obs_ids": ["cell_z", "cell_a", "cell_m"],
+  "source_ids": ["S010", "S021", "S020", "S030", "S040", "S041", "S050", "S060"],
+  "source_symbols": ["SRC_A", "SRC_DUP", "SRC_DUP", "SRC_AMBIG", "SRC_M1", "SRC_M2", "SRC_UNMAPPED", "SRC_ZERO"],
+  "counts": [[2, 40, 3, 7, 11, 13, 17, 0], [0, 1, 5, 9, 0, 2, 19, 0], [4, 0, 1, 0, 3, 0, 23, 0]],
+  "edges": [
+    {"human_id": "H010", "source_id": "S010", "human_symbol": "HUMAN_DUP", "orthology_type": "one2one", "sequence_score": 90, "third_id": "Z010a"},
+    {"human_id": "H010", "source_id": "S010", "human_symbol": "HUMAN_DUP", "orthology_type": "one2one", "sequence_score": 90, "third_id": "Z010b"},
+    {"human_id": "H010", "source_id": "S010", "human_symbol": "HUMAN_DUP", "orthology_type": "one2one", "sequence_score": 90, "third_id": "Z010b"},
+    {"human_id": "H020", "source_id": "S021", "human_symbol": "HUMAN_DUP", "orthology_type": "one2many", "sequence_score": 80, "third_id": "Z020a"},
+    {"human_id": "H020", "source_id": "S021", "human_symbol": "HUMAN_DUP", "orthology_type": "one2many", "sequence_score": 80, "third_id": "Z020b"},
+    {"human_id": "H020", "source_id": "S020", "human_symbol": "HUMAN_DUP", "orthology_type": "one2many", "sequence_score": 99, "third_id": "Z020a"},
+    {"human_id": "H020", "source_id": "S020", "human_symbol": "HUMAN_DUP", "orthology_type": "one2many", "sequence_score": 99, "third_id": "Z020b"},
+    {"human_id": "H030", "source_id": "S030", "human_symbol": "H_AMBIG_A", "orthology_type": "many2one", "sequence_score": 95, "third_id": "Z030"},
+    {"human_id": "H031", "source_id": "S030", "human_symbol": "H_AMBIG_B", "orthology_type": "many2one", "sequence_score": 80, "third_id": "Z031"},
+    {"human_id": "H040", "source_id": "S040", "human_symbol": "H_MANY_A", "orthology_type": "many2many", "sequence_score": 70, "third_id": "Z040"},
+    {"human_id": "H041", "source_id": "S040", "human_symbol": "H_MANY_B", "orthology_type": "many2many", "sequence_score": 75, "third_id": "Z041"},
+    {"human_id": "H040", "source_id": "S041", "human_symbol": "H_MANY_A", "orthology_type": "many2many", "sequence_score": 78, "third_id": "Z040"},
+    {"human_id": "H041", "source_id": "S041", "human_symbol": "H_MANY_B", "orthology_type": "many2many", "sequence_score": 72, "third_id": "Z041"},
+    {"human_id": "H060", "source_id": "S060", "human_symbol": "H_ZERO", "orthology_type": "one2one", "sequence_score": null, "third_id": "Z060"},
+    {"human_id": "H999", "source_id": "S999", "human_symbol": "H_ABSENT", "orthology_type": "one2one", "sequence_score": 100, "third_id": "Z999"}
+  ]
+}

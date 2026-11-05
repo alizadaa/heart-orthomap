@@ -1,0 +1,2 @@
+human_key,human_symbol,fish_key,fish_symbol,left_ensembl_ids,fish_ensembl_ids,human_ID_status,fish_ID_status,recorded_usable_for_Ensembl_feature_mapping,syntax_audited_usable,issue
+ENSEMBL:ENSG00000130707,ASS1,ZFIN:ZDB-GENE-040912-178,ass1,ENSG00000130707,ZDB-GENE-040912-178,single,invalid_syntax,True,False,Non-Ensembl identifier in an Ensembl feature-ID field; input preserved unchanged
